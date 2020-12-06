@@ -130,7 +130,7 @@ class SemiCircRoundSqView(ctx : Context) : View(ctx) {
         private var prev : SCRSNode? = null
 
         init {
-
+            addNeighbor()
         }
 
         fun addNeighbor() {
