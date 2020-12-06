@@ -185,4 +185,27 @@ class SemiCircRoundSqView(ctx : Context) : View(ctx) {
             curr.startUpdating(cb)
         }
     }
+
+    data class Renderer(var view : SemiCircRoundSqView) {
+
+        private val animator : Animator = Animator(view)
+        private val scrs : SemiCircRoundSq = SemiCircRoundSq(0)
+        private val paint : Paint = Paint(Paint.ANTI_ALIAS_FLAG)
+
+        fun render(canvas : Canvas) {
+            canvas.drawColor(backColor)
+            scrs.draw(canvas, paint)
+            animator.animate {
+                scrs.update {
+                    animator.stop()
+                }
+            }
+        }
+
+        fun handleTap() {
+            scrs.startUpdating {
+                animator.start()
+            }
+        }
+    }
 }
