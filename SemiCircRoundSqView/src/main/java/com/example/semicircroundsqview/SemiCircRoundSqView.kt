@@ -210,4 +210,13 @@ class SemiCircRoundSqView(ctx : Context) : View(ctx) {
             }
         }
     }
+
+    companion object {
+
+        fun create(activity : Activity) : SemiCircRoundSqView {
+            val view : SemiCircRoundSqView = SemiCircRoundSqView(activity)
+            activity.setContentView(view)
+            return view
+        }
+    }
 }
