@@ -1,0 +1,3 @@
+include ':SemiCircRoundSqView'
+include ':app'
+rootProject.name = "LinkedSemiCircRoundSqView"
